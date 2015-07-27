@@ -1,4 +1,7 @@
 require 'simplecov'
+require 'devise'
+require 'pry-byebug'
+
 
 module SimpleCov::Configuration
   def clean_filters
@@ -25,6 +28,7 @@ rescue Bundler::BundlerError => e
 end
 require 'test/unit'
 require 'shoulda'
+require 'timecop'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
@@ -32,3 +36,20 @@ require 'devise_user_metering'
 
 class Test::Unit::TestCase
 end
+
+Timecop.safe_mode = true
+
+class User
+  include Devise::Models::UserMetering
+  attr_accessor :activated_at, :deactivated_at, :rollover_active_duration, :active
+  def save!; end
+end
+
+def new_user(opts)
+  u = User.new
+  opts.each do |k, v|
+    u.send("#{k}=", v)
+  end
+  u
+end
+

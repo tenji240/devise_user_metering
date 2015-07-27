@@ -1,6 +1,7 @@
 = devise_user_metering
 
-Description goes here.
+This is a devise extension that is useful for billing customers based on number of active users. 
+It calculates prorated active users in a live system and does not save historical data.
 
 == Contributing to devise_user_metering
  

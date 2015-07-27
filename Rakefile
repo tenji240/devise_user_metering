@@ -15,11 +15,11 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "devise_user_metering"
-  gem.homepage = "http://github.com/mikejihbe/devise_user_metering"
+  gem.homepage = "http://github.com/MustWin/devise_user_metering"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "mikejihbe@gmail.com"
+  gem.summary = %Q{Add methods to devise User models that account for active time during a month. Useful for SAAS billings}
+  gem.description = %Q{Add methods to devise User models that account for active time during a month. Useful for SAAS billings}
+  gem.email = "we@mustwin.com"
   gem.authors = ["Mike Ihbe"]
   # dependencies defined in Gemfile
 end
