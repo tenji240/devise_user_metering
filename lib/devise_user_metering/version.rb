@@ -1,4 +1,6 @@
 module DeviseUserMetering
-  VERSION = "0.0.1".freeze
+  module Version
+    VERSION = "0.0.1".freeze
+  end
 end
 

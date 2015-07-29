@@ -12,6 +12,7 @@ end
 require 'rake'
 
 require 'jeweler'
+require "#{File.dirname(__FILE__)}/lib/devise_user_metering/version"
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "devise_user_metering"
@@ -21,6 +22,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Add methods to devise User models that account for active time during a month. Useful for SAAS billings}
   gem.email = "we@mustwin.com"
   gem.authors = ["Mike Ihbe"]
+  gem.version = DeviseUserMetering::Version::VERSION 
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

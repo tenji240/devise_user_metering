@@ -16,6 +16,4 @@ group :development do
   gem "simplecov", ">= 0"
   gem "timecop"
   gem 'test-unit'
-  gem 'pry'
-  gem 'pry-byebug'
 end
