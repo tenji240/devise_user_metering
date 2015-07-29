@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "devise_user_metering.gemspec",
     "lib/devise_user_metering.rb",
     "lib/devise_user_metering/model.rb",
     "lib/devise_user_metering/rails.rb",
