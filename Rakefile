@@ -22,7 +22,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Add methods to devise User models that account for active time during a month. Useful for SAAS billings}
   gem.email = "we@mustwin.com"
   gem.authors = ["Mike Ihbe"]
-  gem.version = DeviseUserMetering::Version::VERSION 
+  gem.version = DeviseUserMetering::Version::VERSION
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
