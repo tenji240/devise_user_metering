@@ -16,7 +16,7 @@ module Devise
         if interval_end > Time.now
           raise StandardError.new("You can't get meter data for partial intervals")
         end
-        if interval_start < self.activated_at.beginning_of_month
+        if usage_in_interval?(interval_start, interval_end)
           raise StandardError.new('No usage data retained for this period of time')
         end
 
@@ -54,7 +54,13 @@ module Devise
         self.rollover_active_duration = 0
         self.save!
       end
-      
+
+      private
+
+      def usage_in_interval?(interval_start, interval_end)
+        (self.deactivated_at && self.deactivated_at < interval_start) ||
+          (self.activated_at && self.activated_at > interval_end)
+      end   
     end
   end
 end
