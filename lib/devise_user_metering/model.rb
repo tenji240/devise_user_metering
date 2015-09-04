@@ -4,19 +4,19 @@ module Devise
   module Models
     module UserMetering
       
-      # takes a time
-      # returns a decimal between 0 and 1 that reflects the proportion of time in the given month
-      # that the user has been 'active'
+      # takes a time, returns the active interval in that time's month
       def active_proportion_of_month(time)
-        active_proportion(time, time.beginning_of_month, time.end_of_month)
+        active_proportion_of_interval(time.beginning_of_month, time.end_of_month)
       end
       
-      #this function is used to calculate the standard activity for the custom interval passed in
-      def active_proportion_of_interval(time, interval_start, interval_end)
+      # takes an interval start and interval end
+      # returns a decimal between 0 and 1 that reflects the proportion of time in the given interval
+      # that the user has been 'active'
+      def active_proportion_of_interval(interval_start, interval_end)
         if interval_end > Time.now
           raise StandardError.new("You can't get meter data for partial intervals")
         end
-        if interval_start < self.activated_at
+        if interval_start < self.activated_at.beginning_of_month
           raise StandardError.new('No usage data retained for this period of time')
         end
 
