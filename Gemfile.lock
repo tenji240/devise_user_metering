@@ -184,6 +184,3 @@ DEPENDENCIES
   simplecov
   test-unit
   timecop
-
-BUNDLED WITH
-   1.10.4
