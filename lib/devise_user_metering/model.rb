@@ -4,7 +4,7 @@ module Devise
   module Models
     module UserMetering
       # This function returns a decimal between 0 and 1 that reflects the amount of the month this user has been 'active'
-      def active_proportion_of_month(time, &time_start, &time_end)
+      def active_proportion_of_month(time, time_start=nil, time_end=nil)
         month = time_start || time.beginning_of_month
         end_month = time_end || time.end_of_month
 
