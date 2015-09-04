@@ -21,7 +21,7 @@ class UserTest < Test::Unit::TestCase
   should "Track users with an optional custom time span passed in" do
     u =  new_user(activated_at: Time.parse("2015-01-01"), active: true, rollover_active_duration: 0)
     Timecop.freeze(Date.parse("2015-03-20")) do
-       assert_equal 1, u.active_proportion_of_month(Time.parse("2015-03-15"), Time.parse("2015-01-15"), Time.parse("2015-02-15"))
+       assert_equal 1, u.active_proportion_of_interval(Time.parse("2015-03-15"), Time.parse("2015-01-15"), Time.parse("2015-02-15"))
     end
   end
 
